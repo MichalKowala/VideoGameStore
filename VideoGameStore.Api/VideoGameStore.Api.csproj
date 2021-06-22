@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\VideoGameStore.Application\VideoGameStore.Application.csproj" />
     <ProjectReference Include="..\VideoGameStore.Persistance\VideoGameStore.Persistance.csproj" />
   </ItemGroup>
 

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoGameStore.Domain", "Vi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoGameStore.Persistance", "VideoGameStore.Persistance\VideoGameStore.Persistance.csproj", "{F6342ED4-F24B-49F9-BFA8-9D82F4EDDF0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoGameStore.Application", "VideoGameStore.Application\VideoGameStore.Application.csproj", "{4ABEFA4E-EC01-401A-A0BB-64A332FB1F5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{F6342ED4-F24B-49F9-BFA8-9D82F4EDDF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6342ED4-F24B-49F9-BFA8-9D82F4EDDF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6342ED4-F24B-49F9-BFA8-9D82F4EDDF0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ABEFA4E-EC01-401A-A0BB-64A332FB1F5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ABEFA4E-EC01-401A-A0BB-64A332FB1F5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ABEFA4E-EC01-401A-A0BB-64A332FB1F5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ABEFA4E-EC01-401A-A0BB-64A332FB1F5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

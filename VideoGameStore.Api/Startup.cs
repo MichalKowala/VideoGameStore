@@ -13,6 +13,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using VideoGameStore.Persistance;
 using Microsoft.EntityFrameworkCore.Design;
+using VideoGameStore.Application;
+using MediatR;
+using System.Reflection;
 
 namespace VideoGameStore.Api
 {
@@ -28,8 +31,11 @@ namespace VideoGameStore.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<VideoGameStoreDbContext>();
+            services.AddPersistance();
+            services.AddApplication();
             services.AddControllers();
+            var assembly = AppDomain.CurrentDomain.Load("VideoGameStore.Application");
+            services.AddMediatR(assembly);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "VideoGameStore.Api", Version = "v1" });
