@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoGameStore.Persistance"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoGameStore.Application", "VideoGameStore.Application\VideoGameStore.Application.csproj", "{4ABEFA4E-EC01-401A-A0BB-64A332FB1F5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoziomPierwszy", "PoziomPierwszy\PoziomPierwszy.csproj", "{446FD9D7-E193-4C25-9E03-F35DF6806256}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{4ABEFA4E-EC01-401A-A0BB-64A332FB1F5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4ABEFA4E-EC01-401A-A0BB-64A332FB1F5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ABEFA4E-EC01-401A-A0BB-64A332FB1F5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{446FD9D7-E193-4C25-9E03-F35DF6806256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{446FD9D7-E193-4C25-9E03-F35DF6806256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{446FD9D7-E193-4C25-9E03-F35DF6806256}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{446FD9D7-E193-4C25-9E03-F35DF6806256}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 		{452074A3-7FD2-4BA5-8A00-11B5A66953B3} = {D21DB5C4-A89A-4F52-9021-395DAB908CAF}
 		{F6342ED4-F24B-49F9-BFA8-9D82F4EDDF0E} = {D21DB5C4-A89A-4F52-9021-395DAB908CAF}
 		{4ABEFA4E-EC01-401A-A0BB-64A332FB1F5C} = {D21DB5C4-A89A-4F52-9021-395DAB908CAF}
+		{446FD9D7-E193-4C25-9E03-F35DF6806256} = {D21DB5C4-A89A-4F52-9021-395DAB908CAF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {32B649C3-9F41-4B7B-96EE-A6AA87013CEC}
