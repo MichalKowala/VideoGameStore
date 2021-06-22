@@ -15,5 +15,7 @@ namespace VideoGameStore.Persistance
         T GetById(Guid id);
         IQueryable<T> GetAll();
         IQueryable<T> GetAll(Func<T, bool> predicate);
+        void Update(T entity);
+        
     }
 }
