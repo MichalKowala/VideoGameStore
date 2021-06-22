@@ -12,8 +12,8 @@ namespace VideoGameStore.Persistance.EntitiesConfiguration
     {
         public override void ConfigureEntity(EntityTypeBuilder<Address> builder)
         {
-            builder.HasOne(x => x.Developer).WithOne(x => x.HeadquartersLocation).HasForeignKey<Address>(x => x.DeveloperId);
-            builder.HasOne(x => x.Publisher).WithOne(x => x.HeadquartersLocation).HasForeignKey<Address>(x => x.PublisherId);
+            builder.HasOne(x => x.Developer).WithOne(x => x.HeadquartersLocation).HasForeignKey<Developer>(x => x.HeadquartersLocationId);
+            builder.HasOne(x => x.Publisher).WithOne(x => x.HeadquartersLocation).HasForeignKey<Publisher>(x => x.HeadquartersLocationId);
         }
     }
 }
