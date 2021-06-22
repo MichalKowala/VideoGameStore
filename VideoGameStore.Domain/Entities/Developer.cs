@@ -9,8 +9,8 @@ namespace VideoGameStore.Domain.Entities
     public class Developer : EntityBase
     {
         public string CompanyName { get; set; }
-        public Address HeadquartersLocation { get; set; }
-        public Guid HeadquartersLocationId { get; set; }
-        public List<VideoGame> Games { get; set; }
+        public Address? HeadquartersLocation { get; set; }
+        public Guid? HeadquartersLocationId { get; set; }
+        public List<VideoGame>? Games { get; set; }
     }
 }

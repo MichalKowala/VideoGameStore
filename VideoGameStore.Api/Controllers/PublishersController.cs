@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using VideoGameStore.Application.Publishers.Commands.AddPublisher;
 using VideoGameStore.Application.Publishers.Commands.DeletePublisher;
+using VideoGameStore.Application.Publishers.Commands.UpdatePublisher;
 using VideoGameStore.Application.Publishers.Queries.GetAllPublishers;
 using VideoGameStore.Domain.Entities;
 
@@ -39,9 +40,9 @@ namespace VideoGameStore.Api.Controllers
             await _mediator.Send(new DeletePublisherCommand(id));
         }
         [HttpPut]
-        public async Task Update(VideoGame game)
+        public async Task Update(Publisher publisher)
         {
-           // await _mediator.Send(new UpdateVideoGameCommand(game));
+           await _mediator.Send(new UpdatePublisherCommand(publisher));
         }
     }
 }
