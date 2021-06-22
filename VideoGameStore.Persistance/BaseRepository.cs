@@ -7,7 +7,7 @@ using VideoGameStore.Domain.Entities;
 
 namespace VideoGameStore.Persistance
 {
-    public class BaseRepository <T> where T : EntityBase
+    public class BaseRepository <T> : IBaseRepository<T> where T : EntityBase
     { 
         protected readonly VideoGameStoreDbContext _dbContext;
         public BaseRepository(VideoGameStoreDbContext dbContext)
