@@ -12,13 +12,16 @@ namespace PoziomPierwszy
         {
             int rowsCount = 3;
             int colsCount = 7;
+            //pliki .txt z tablicami znajdą się w folderze Moje Dokumenty
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             var array = GenerateArray(rowsCount, colsCount);
-            WriteArrayToFile(array, "D:/tablica.txt");
-            var arrayFromFile = ReadArrayFromFile(rowsCount, colsCount, "D:/tablica.txt");
-            SortByColumnAveragedSumAndWriteToFile(arrayFromFile, "D:/posortowana.txt");
+            WriteArrayToFile(array, path+"/tablica.txt");
+            var arrayFromFile = ReadArrayFromFile(rowsCount, colsCount, path+"/tablica.txt");
+            var sortedArray=SortByColumnAveragedSum(arrayFromFile);
+            WriteArrayToFile(sortedArray, path+"/tablica_posortowana.txt");
         }
 
-        public static void SortByColumnAveragedSumAndWriteToFile(int[,] unsortedArray, string fileLocation)
+        public static int[,] SortByColumnAveragedSum(int[,] unsortedArray)
         {
             List<Tuple<int, double>> rowToAveragedValue = new List<Tuple<int, double>>();
             int[,] sortedArray = new int[unsortedArray.GetUpperBound(0)+1, unsortedArray.GetUpperBound(1)+1];
@@ -39,10 +42,9 @@ namespace PoziomPierwszy
                 for (int j = 0; j <= unsortedArray.GetUpperBound(0); j++)
                 {
                     sortedArray[j, i] = unsortedArray[j, orderedRowToAveragedValue.ElementAt(i).Item1];
-                    Console.WriteLine("");
                 }
             }
-            WriteArrayToFile(sortedArray, fileLocation);
+            return sortedArray;
         }
         public static int[,] ReadArrayFromFile(int width, int height, string fileLocation)
         {
