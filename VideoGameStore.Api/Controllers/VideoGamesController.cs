@@ -25,26 +25,29 @@ namespace VideoGameStore.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<List<VideoGame>> Get()
+        public async Task<IActionResult> Get()
         {
 
             List<VideoGame> games = await _mediator.Send(new GetAllVideoGamesQuery());
-            return games;
+            return Ok(games);
         }
         [HttpPost]
-        public async Task Create(VideoGame game)
+        public async Task<IActionResult> Create(VideoGame game)
         {
-            await _mediator.Send(new AddVideoGameCommand(game));
+            var queryResult = await _mediator.Send(new AddVideoGameCommand(game));
+            return Ok(queryResult);
         }
         [HttpDelete]
-        public async Task Delete(Guid id)
+        public async Task<IActionResult> Delete(Guid id)
         {
-            await _mediator.Send(new DeleteVideoGameCommand(id));
+            var queryResult = await _mediator.Send(new DeleteVideoGameCommand(id));
+            return Ok(queryResult);
         }
         [HttpPut]
-        public async Task Update(VideoGame game)
+        public async Task<IActionResult> Update(VideoGame game)
         {
-            await _mediator.Send(new UpdateVideoGameCommand(game));
+            var queryResult=await _mediator.Send(new UpdateVideoGameCommand(game));
+            return Ok(queryResult);
         }
     }
 }

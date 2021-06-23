@@ -24,25 +24,28 @@ namespace VideoGameStore.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<List<Publisher>> Get()
+        public async Task<IActionResult> Get()
         {
             List<Publisher> publishers = await _mediator.Send(new GetAllPublishersQuery());
-            return publishers;
+            return Ok(publishers);
         }
         [HttpPost]
-        public async Task Create(Publisher publisher)
+        public async Task<IActionResult> Create(Publisher publisher)
         {
-            await _mediator.Send(new AddPublisherCommand(publisher));
+            var queryResult = await _mediator.Send(new AddPublisherCommand(publisher));
+            return Ok(queryResult);
         }
         [HttpDelete]
-        public async Task Delete(Guid id)
+        public async Task<IActionResult> Delete(Guid id)
         {
-            await _mediator.Send(new DeletePublisherCommand(id));
+            var queryResult = await _mediator.Send(new DeletePublisherCommand(id));
+            return Ok(queryResult);
         }
         [HttpPut]
-        public async Task Update(Publisher publisher)
+        public async Task<IActionResult> Update(Publisher publisher)
         {
-           await _mediator.Send(new UpdatePublisherCommand(publisher));
+            var queryResult = await _mediator.Send(new UpdatePublisherCommand(publisher));
+            return Ok(queryResult);
         }
     }
 }
