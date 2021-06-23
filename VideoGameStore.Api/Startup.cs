@@ -16,6 +16,10 @@ using Microsoft.EntityFrameworkCore.Design;
 using VideoGameStore.Application;
 using MediatR;
 using System.Reflection;
+using GlobalExceptionHandler;
+using GlobalExceptionHandler.WebApi;
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.Http;
 
 namespace VideoGameStore.Api
 {
@@ -51,7 +55,15 @@ namespace VideoGameStore.Api
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "VideoGameStore.Api v1"));
             }
+            app.UseGlobalExceptionHandler(x => {
+                x.ContentType = "application/json";
+                x.ResponseBody(s => JsonConvert.SerializeObject(new
+                {
+                    Message = "An error occurred whilst processing your request"
+                }));
+                x.Map<System.ArgumentNullException>().ToStatusCode(StatusCodes.Status404NotFound).WithBody((ex, context)=>JsonConvert.SerializeObject(new { Message = "Resource not found"}));
 
+            });
             app.UseHttpsRedirection();
 
             app.UseRouting();

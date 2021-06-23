@@ -14,6 +14,7 @@ namespace VideoGameStore.Domain.Entities
         public decimal Price { get; set; }
 
         public PegiAgeRestriction PegiAgeRestriction { get; set; }
+        #nullable enable
         public Guid? DeveloperId { get; set; }
         public Developer? Developer { get; set; }
         public Guid? PublisherId { get; set; }
